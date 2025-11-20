@@ -48,7 +48,20 @@ export default function NotesPage() {
       return;
     }
 
-    const { error } = await supabase.from("notes").insert({ content });
+    // Get the current user
+    const {
+      data: { user: currentUser },
+    } = await supabase.auth.getUser();
+
+    if (!currentUser) {
+      setErrorMsg("You must be logged in to add notes.");
+      return;
+    }
+
+    const { error } = await supabase.from("notes").insert({
+      content,
+      user_id: currentUser.id,
+    });
 
     if (error) {
       console.error(error);
