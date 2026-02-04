@@ -98,7 +98,7 @@ export default function Signup() {
           </div>
 
           <div className="mt-8 rounded-xl bg-white p-8 shadow-lg border border-gray-100">
-            <div className="space-y-6">
+            <form onSubmit={(e) => { e.preventDefault(); handleSignup(); }} className="space-y-6">
               <div>
                 <label
                   htmlFor="email"
@@ -124,7 +124,7 @@ export default function Signup() {
                 <input
                   id="password"
                   type="password"
-                  placeholder="At least 6 characters"
+                  placeholder="At least 12 characters"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -144,7 +144,7 @@ export default function Signup() {
               )}
 
               <button
-                onClick={handleSignup}
+                type="submit"
                 disabled={loading}
                 className="w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
                 {loading ? "Creating account..." : "Create account"}
@@ -158,7 +158,7 @@ export default function Signup() {
                   Sign in
                 </Link>
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
