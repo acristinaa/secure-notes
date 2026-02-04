@@ -21,8 +21,8 @@ export default function Signup() {
       return;
     }
 
-    if (password.length < 6) {
-      setErrorMsg("Password must be at least 6 characters long.");
+    if (password.length < 12) { // Changed from 6 to 12
+      setErrorMsg("Password must be at least 12 characters long.");
       setLoading(false);
       return;
     }
@@ -40,7 +40,7 @@ export default function Signup() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-white to-purple-50">
       <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
