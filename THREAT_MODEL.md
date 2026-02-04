@@ -30,12 +30,19 @@
 ### transport layer
 - Token theft → mitigated by HttpOnly cookies
 
+### browser layer
+- Clickjacking (Not yet mitigated)
+- Script injection, mitigated by React auto-escaping
+
 ### application layer
 - SQL Injection → mitigated by Supabase RLS policies
 - CSRF → mitigated by same-site cookies
 - XSS → mitigated by React auto-escaping
 - Broken auth → mitigated by Supabase Auth
 - Broken access control → mitigated by RLS
+- Information disclosure (console.log esposes user data)
+- Client-side auth bypass, no server-side middleware
+
 
 ## 5. summary of security posture
 The application is protected through modern best practices including RLS, TLS, hashed passwords, and input validation. Remaining risks include social engineering and user-side compromises.

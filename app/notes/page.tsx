@@ -61,7 +61,7 @@ export default function NotesPage() {
     const { error } = await supabase.from("notes").insert({
       content,
       user_id: currentUser.id,
-    });
+    }); 
 
     if (error) {
       console.error(error);
@@ -218,7 +218,7 @@ export default function NotesPage() {
                 className="rounded-xl bg-white p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
                 <div className="flex items-start justify-between gap-4">
                   <p className="flex-1 text-gray-900 whitespace-pre-wrap break-words">
-                    {note.content}
+                    {note.content} {/** XSS Protection */}
                   </p>
                   <button
                     onClick={() => deleteNote(note.id)}

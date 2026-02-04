@@ -34,7 +34,7 @@ export default function LoginPage() {
       return;
     }
 
-    console.log("Logged in user:", data.user);
+    console.log("Logged in user:", data.user); //I just realized that I'm exposing the user. 
     setLoading(false);
 
     router.push("/notes");

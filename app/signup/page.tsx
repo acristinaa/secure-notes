@@ -14,7 +14,7 @@ export default function Signup() {
     setErrorMsg(null);
     setSuccessMsg(null);
     setLoading(true);
-
+    
     if (!email || !password) {
       setErrorMsg("Please enter both email and password.");
       setLoading(false);
