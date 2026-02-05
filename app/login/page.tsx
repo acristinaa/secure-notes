@@ -34,14 +34,14 @@ export default function LoginPage() {
       return;
     }
 
-    console.log("Logged in user:", data.user); //I just realized that I'm exposing the user. 
+    console.log("Logged in user successfully"); 
     setLoading(false);
 
     router.push("/notes");
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-white to-purple-50">
       <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
